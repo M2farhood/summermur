@@ -86,8 +86,9 @@
     window.addEventListener('resize', resize);
 
     const colors = [
-      '#D4AF37', '#8B2252', '#FFE4E1', '#B76E79',
-      '#FFF8F0', '#c44476', '#f5c6d0', '#e8b931'
+      '#E8960C', '#F5C518', '#FFF3A3', '#D97200',
+      '#FFE87A', '#FFF8E0', '#FBBF24', '#E05A1A',
+      '#ffffff', '#ffe0a0'
     ];
 
     function createParticle() {

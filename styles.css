@@ -1,12 +1,12 @@
 /* ============================================================
-   SUMMERIE — Romantic Invitation
-   Color Palette:
-     Deep Rose:      #8B2252
-     Champagne Gold: #D4AF37
-     Warm Cream:     #FFF8F0
-     Soft Blush:     #FFE4E1
-     Midnight:       #1a1a2e
-     Rose Gold:      #B76E79
+   SUMMERIE — Sunflower Sunset Edition
+   Palette:
+     Amber Gold:    #E8960C
+     Golden:        #D4AF37
+     Warm Cream:    #FFF8E7
+     Sunset Orange: #E05A1A
+     Deep Brown:    #3a2000
+     Warm White:    #FFFBF0
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Great+Vibes&display=swap');
@@ -27,8 +27,8 @@ html {
 
 body {
   font-family: 'Cormorant Garamond', 'Georgia', serif;
-  color: #2c1810;
-  background: #1a1a2e;
+  color: #3a2000;
+  background: #1a0e00;
   overflow: hidden;
   min-height: 100vh;
   min-height: 100dvh;
@@ -58,33 +58,28 @@ body {
   z-index: 10;
 }
 
-/* ---------- SCENE 1: Welcome ---------- */
+/* =============================================
+   SCENE 1 — WELCOME (Sunflower Field BG)
+   ============================================= */
 #scene-welcome {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2d1b3d 30%, #3d1f3f 60%, #1a1a2e 100%);
+  background:
+    linear-gradient(to bottom,
+      rgba(30, 12, 0, 0.25) 0%,
+      rgba(20, 8, 0, 0.15) 40%,
+      rgba(100, 40, 0, 0.35) 80%,
+      rgba(20, 8, 0, 0.5) 100%),
+    url('bg.jpg') center center / cover no-repeat;
   overflow: hidden;
-}
-
-/* Warm sun-rose ambient glow at the bottom of welcome */
-#scene-welcome::after {
-  content: '';
-  position: absolute;
-  bottom: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 600px;
-  height: 220px;
-  background: radial-gradient(ellipse at center,
-      rgba(228, 160, 20, 0.12) 0%,
-      rgba(212, 120, 20, 0.07) 40%,
-      transparent 70%);
-  pointer-events: none;
-  z-index: 1;
 }
 
 .welcome-content {
   text-align: center;
   z-index: 5;
   position: relative;
+  /* Faint warm backdrop so text is always readable */
+  padding: 2rem 3rem;
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.25) 0%, transparent 70%);
 }
 
 .welcome-pretext {
@@ -92,10 +87,10 @@ body {
   font-size: 1.2rem;
   font-weight: 300;
   font-style: italic;
-  color: rgba(212, 175, 55, 0.7);
+  color: rgba(255, 240, 180, 0.9);
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
   opacity: 0;
   animation: fadeSlideUp 1.2s 0.5s forwards;
 }
@@ -103,10 +98,11 @@ body {
 .welcome-name {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(3.5rem, 10vw, 7rem);
-  color: #D4AF37;
+  color: #FFF8C0;
   text-shadow:
-    0 0 20px rgba(212, 175, 55, 0.3),
-    0 0 60px rgba(212, 175, 55, 0.1);
+    0 0 25px rgba(255, 210, 50, 0.7),
+    0 0 60px rgba(230, 150, 20, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.4);
   line-height: 1.2;
   opacity: 0;
   animation: fadeSlideUp 1.5s 1s forwards;
@@ -115,48 +111,51 @@ body {
 .welcome-subtitle {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1rem, 2.5vw, 1.4rem);
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
-  color: rgba(255, 228, 225, 0.8);
-  margin-top: 1.5rem;
-  letter-spacing: 0.1em;
+  color: rgba(255, 240, 200, 0.92);
+  margin-top: 1.2rem;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: fadeSlideUp 1.2s 1.8s forwards;
 }
 
 .welcome-btn {
-  margin-top: 3rem;
-  padding: 1rem 3.5rem;
+  margin-top: 2.5rem;
+  padding: 0.9rem 3.2rem;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: #D4AF37;
+  color: #FFF8E0;
   background: transparent;
-  border: 1.5px solid rgba(212, 175, 55, 0.5);
-  border-radius: 0;
+  border: 1.5px solid rgba(255, 220, 100, 0.65);
   cursor: pointer;
   position: relative;
   overflow: hidden;
   opacity: 0;
   animation: fadeSlideUp 1.2s 2.6s forwards;
   transition: all 0.5s ease;
+  backdrop-filter: blur(2px);
 }
 
 .welcome-btn::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 34, 82, 0.1));
+  background: linear-gradient(135deg,
+      rgba(232, 150, 12, 0.25),
+      rgba(200, 80, 10, 0.15));
   opacity: 0;
   transition: opacity 0.5s ease;
 }
 
 .welcome-btn:hover {
-  border-color: #D4AF37;
-  color: #FFF8F0;
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+  border-color: rgba(255, 220, 80, 0.9);
+  box-shadow: 0 0 25px rgba(232, 150, 12, 0.35);
+  color: #FFF8C0;
 }
 
 .welcome-btn:hover::before {
@@ -164,6 +163,14 @@ body {
 }
 
 /* Floating decorations */
+.floating-decorations,
+.celebration-decorations {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 .floating-decor {
   position: absolute;
   pointer-events: none;
@@ -172,7 +179,8 @@ body {
 
 .decor-heart,
 .decor-rose,
-.decor-star {
+.decor-star,
+.decor-sunrose {
   position: absolute;
   opacity: 0;
 }
@@ -191,19 +199,26 @@ body {
 
 .decor-sunrose {
   animation: floatRose var(--duration, 18s) var(--delay, 0s) infinite ease-in-out;
-  filter: drop-shadow(0 0 6px rgba(255, 200, 50, 0.3));
+  filter: drop-shadow(0 0 8px rgba(255, 200, 30, 0.5));
 }
 
-/* ---------- SCENE 2: Invitation ---------- */
+/* =============================================
+   SCENE 2 — INVITATION CARD
+   ============================================= */
 #scene-invitation {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2a1525 40%, #1a1a2e 100%);
+  background:
+    linear-gradient(to bottom,
+      rgba(30, 12, 0, 0.55) 0%,
+      rgba(80, 30, 0, 0.45) 50%,
+      rgba(20, 8, 0, 0.6) 100%),
+    url('bg.jpg') center 60% / cover no-repeat;
   padding: 2rem;
 }
 
 .invitation-card {
   background: linear-gradient(145deg,
-      rgba(255, 248, 240, 0.97),
-      rgba(255, 228, 225, 0.95));
+      rgba(255, 251, 230, 0.96),
+      rgba(255, 240, 195, 0.94));
   border-radius: 4px;
   padding: clamp(2rem, 5vw, 3.5rem);
   max-width: 560px;
@@ -211,9 +226,9 @@ body {
   text-align: center;
   position: relative;
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(212, 175, 55, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    0 25px 70px rgba(50, 20, 0, 0.45),
+    0 0 0 1px rgba(232, 150, 12, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
   opacity: 0;
   transform: translateY(30px) scale(0.95);
   animation: cardReveal 1s 0.3s forwards cubic-bezier(0.4, 0, 0.2, 1);
@@ -222,8 +237,8 @@ body {
 .invitation-card::before {
   content: '';
   position: absolute;
-  inset: 6px;
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  inset: 7px;
+  border: 1px solid rgba(232, 150, 12, 0.3);
   border-radius: 2px;
   pointer-events: none;
 }
@@ -236,9 +251,9 @@ body {
   right: -2px;
   bottom: -2px;
   background: linear-gradient(135deg,
-      rgba(212, 175, 55, 0.4),
-      rgba(183, 110, 121, 0.3),
-      rgba(212, 175, 55, 0.4));
+      rgba(232, 150, 12, 0.5),
+      rgba(220, 90, 10, 0.25),
+      rgba(232, 150, 12, 0.5));
   border-radius: 5px;
   z-index: -1;
   filter: blur(1px);
@@ -249,8 +264,9 @@ body {
   position: absolute;
   width: 50px;
   height: 50px;
-  opacity: 0.35;
+  opacity: 0.4;
   z-index: 2;
+  color: #C47A00;
 }
 
 .corner-ornament.top-left {
@@ -279,14 +295,14 @@ body {
 .invitation-heading {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2rem, 5vw, 2.8rem);
-  color: #8B2252;
+  color: #7a3a00;
   margin-bottom: 0.5rem;
 }
 
 .invitation-divider {
   width: 80px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  background: linear-gradient(90deg, transparent, #E8960C, transparent);
   margin: 1rem auto;
 }
 
@@ -294,8 +310,8 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.05rem, 2.5vw, 1.25rem);
   font-weight: 400;
-  color: #3d2b2b;
-  line-height: 1.8;
+  color: #3a2000;
+  line-height: 1.85;
   margin-bottom: 0.8rem;
 }
 
@@ -304,7 +320,7 @@ body {
   font-weight: 600;
   font-style: italic;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
-  color: #8B2252;
+  color: #7a3a00;
   margin: 1.2rem 0;
 }
 
@@ -312,7 +328,7 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   font-style: italic;
-  color: #8B2252;
+  color: #7a3a00;
   min-height: 2rem;
   margin: 1rem 0 0.5rem;
   opacity: 0;
@@ -349,25 +365,25 @@ body {
 .btn-yes {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  color: #FFF8F0;
-  background: linear-gradient(135deg, #8B2252, #a3325f);
+  color: #FFF8E0;
+  background: linear-gradient(135deg, #b85c00, #d97200);
   border-radius: 3px;
   box-shadow:
-    0 4px 15px rgba(139, 34, 82, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    0 4px 18px rgba(184, 92, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .btn-yes::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #a3325f, #c44476);
+  background: linear-gradient(135deg, #d97200, #f08c00);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
 .btn-yes:hover {
-  box-shadow: 0 6px 25px rgba(139, 34, 82, 0.45);
+  box-shadow: 0 6px 28px rgba(184, 92, 0, 0.55);
   transform: translateY(-2px);
 }
 
@@ -383,18 +399,18 @@ body {
 .btn-no {
   padding: 0.85rem 2rem;
   font-size: 1rem;
-  color: #8B2252;
+  color: #7a3a00;
   background: transparent;
-  border: 1.5px solid rgba(139, 34, 82, 0.3);
+  border: 1.5px solid rgba(122, 58, 0, 0.35);
   border-radius: 3px;
 }
 
 .btn-no:hover {
-  border-color: rgba(139, 34, 82, 0.6);
-  background: rgba(139, 34, 82, 0.04);
+  border-color: rgba(122, 58, 0, 0.65);
+  background: rgba(122, 58, 0, 0.05);
 }
 
-/* Button state transitions for the shrinking No mechanic */
+/* Shrinking No / Growing Yes stages */
 .btn-yes.stage-1 {
   padding: 1.15rem 3rem;
   font-size: 1.2rem;
@@ -431,19 +447,18 @@ body {
 .btn-yes.stage-4 {
   padding: 1.8rem 5.5rem;
   font-size: 1.7rem;
-  box-shadow: 0 8px 35px rgba(139, 34, 82, 0.5);
+  box-shadow: 0 8px 40px rgba(184, 92, 0, 0.6);
   animation: yesPulse 2s infinite ease-in-out;
 }
 
 .btn-no.stage-4 {
   padding: 0.15rem 0.3rem;
   font-size: 0.35rem;
-  opacity: 0.2;
+  opacity: 0.15;
   pointer-events: none;
   border-color: transparent;
 }
 
-/* Heart icon inside Yes button */
 .btn-heart {
   display: inline-block;
   margin-left: 0.5rem;
@@ -454,9 +469,16 @@ body {
   transform: scale(1.2);
 }
 
-/* ---------- SCENE 3: Celebration ---------- */
+/* =============================================
+   SCENE 3 — CELEBRATION
+   ============================================= */
 #scene-celebration {
-  background: linear-gradient(135deg, #1a1a2e 0%, #2a1525 30%, #3d1b2f 60%, #1a1a2e 100%);
+  background:
+    linear-gradient(to bottom,
+      rgba(20, 8, 0, 0.4) 0%,
+      rgba(60, 22, 0, 0.35) 40%,
+      rgba(20, 8, 0, 0.5) 100%),
+    url('bg.jpg') center 30% / cover no-repeat;
   overflow: hidden;
 }
 
@@ -464,8 +486,10 @@ body {
   text-align: center;
   z-index: 5;
   position: relative;
-  max-width: 600px;
-  padding: 2rem;
+  max-width: 620px;
+  padding: 2.5rem 2rem;
+  background: radial-gradient(ellipse at center,
+      rgba(0, 0, 0, 0.3) 0%, transparent 70%);
 }
 
 .celebration-pretext {
@@ -473,8 +497,8 @@ body {
   font-size: 1.1rem;
   font-weight: 300;
   font-style: italic;
-  color: rgba(212, 175, 55, 0.6);
-  letter-spacing: 0.3em;
+  color: rgba(255, 235, 150, 0.75);
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   margin-bottom: 1.2rem;
   opacity: 0;
@@ -483,9 +507,12 @@ body {
 
 .celebration-heading {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(3rem, 8vw, 5rem);
-  color: #D4AF37;
-  text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: #FFF5B0;
+  text-shadow:
+    0 0 30px rgba(255, 200, 40, 0.6),
+    0 0 80px rgba(232, 120, 10, 0.3),
+    0 2px 10px rgba(0, 0, 0, 0.5);
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeSlideUp 1.2s 1s forwards;
@@ -495,8 +522,9 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.05rem, 2.5vw, 1.3rem);
   font-weight: 400;
-  color: rgba(255, 228, 225, 0.9);
+  color: rgba(255, 245, 215, 0.95);
   line-height: 2;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   opacity: 0;
   animation: fadeSlideUp 1.5s 1.8s forwards;
 }
@@ -507,8 +535,9 @@ body {
 
 .celebration-signature {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(1.6rem, 4vw, 2.2rem);
-  color: #D4AF37;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #FFE880;
+  text-shadow: 0 0 20px rgba(255, 210, 50, 0.5);
   margin-top: 2.5rem;
   opacity: 0;
   animation: fadeSlideUp 1s 3s forwards;
@@ -521,7 +550,9 @@ body {
   pointer-events: none;
 }
 
-/* ---------- Keyframes ---------- */
+/* =============================================
+   KEYFRAMES
+   ============================================= */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -574,12 +605,11 @@ body {
 
   0%,
   100% {
-    box-shadow: 0 8px 35px rgba(139, 34, 82, 0.5);
+    box-shadow: 0 8px 40px rgba(184, 92, 0, 0.55);
   }
 
   50% {
-    box-shadow: 0 8px 50px rgba(139, 34, 82, 0.7),
-      0 0 20px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 8px 55px rgba(232, 150, 12, 0.8), 0 0 25px rgba(255, 200, 50, 0.3);
   }
 }
 
@@ -590,11 +620,11 @@ body {
   }
 
   10% {
-    opacity: 0.6;
+    opacity: 0.55;
   }
 
   90% {
-    opacity: 0.6;
+    opacity: 0.55;
   }
 
   100% {
@@ -636,24 +666,14 @@ body {
   }
 
   50% {
-    opacity: 0.8;
-    transform: scale(1.2);
+    opacity: 0.85;
+    transform: scale(1.3);
   }
 }
 
-@keyframes glowPulse {
-
-  0%,
-  100% {
-    filter: drop-shadow(0 0 3px rgba(212, 175, 55, 0.3));
-  }
-
-  50% {
-    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.6));
-  }
-}
-
-/* ---------- Responsive ---------- */
+/* =============================================
+   RESPONSIVE
+   ============================================= */
 @media (max-width: 600px) {
   .invitation-card {
     padding: 2rem 1.5rem;
@@ -673,6 +693,10 @@ body {
   .btn-yes.stage-4 {
     padding: 1.4rem 3rem;
     font-size: 1.4rem;
+  }
+
+  .welcome-content {
+    padding: 1.5rem;
   }
 }
 
