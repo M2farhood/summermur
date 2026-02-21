@@ -173,10 +173,14 @@
 
     const starSVG = `<svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><circle cx="12" cy="12" r="3"/></svg>`;
 
+    // Sun rose (sunflower) — her favourite
+    const sunroseSVG = `<svg viewBox="0 0 32 32" width="22" height="22"><circle cx="16" cy="16" r="5" fill="#5a3a00" opacity="0.85"/><ellipse cx="16" cy="5" rx="3" ry="5" fill="currentColor"/><ellipse cx="16" cy="27" rx="3" ry="5" fill="currentColor"/><ellipse cx="5" cy="16" rx="5" ry="3" fill="currentColor"/><ellipse cx="27" cy="16" rx="5" ry="3" fill="currentColor"/><ellipse cx="8.5" cy="8.5" rx="3" ry="5" transform="rotate(45 8.5 8.5)" fill="currentColor"/><ellipse cx="23.5" cy="8.5" rx="3" ry="5" transform="rotate(-45 23.5 8.5)" fill="currentColor"/><ellipse cx="8.5" cy="23.5" rx="3" ry="5" transform="rotate(-45 8.5 23.5)" fill="currentColor"/><ellipse cx="23.5" cy="23.5" rx="3" ry="5" transform="rotate(45 23.5 23.5)" fill="currentColor"/></svg>`;
+
     const decorItems = [
-      { svg: heartSVG, className: 'decor-heart', count: 6, color: 'rgba(183, 110, 121, 0.5)' },
-      { svg: roseSVG, className: 'decor-rose', count: 4, color: 'rgba(139, 34, 82, 0.4)' },
-      { svg: starSVG, className: 'decor-star', count: 25, color: 'rgba(212, 175, 55, 0.6)' }
+      { svg: heartSVG, className: 'decor-heart', count: 5, color: 'rgba(183, 110, 121, 0.5)' },
+      { svg: roseSVG, className: 'decor-rose', count: 3, color: 'rgba(139, 34, 82, 0.4)' },
+      { svg: starSVG, className: 'decor-star', count: 22, color: 'rgba(212, 175, 55, 0.6)' },
+      { svg: sunroseSVG, className: 'decor-sunrose', count: 5, color: 'rgba(228, 180, 30, 0.65)' }
     ];
 
     decorItems.forEach(item => {
