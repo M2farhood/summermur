@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>For Summerie</title>
+  <meta name="description" content="A special invitation, made with love.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="theme-rose">
+
+  <!-- ===================== SCENE 1: WELCOME ===================== -->
+  <section id="scene-welcome" class="scene active">
+    <!-- Floating decorations container -->
+    <div class="floating-decorations"></div>
+
+    <div class="welcome-content">
+      <p class="welcome-pretext">I made something else for you</p>
+      <h1 class="welcome-name">Summerie</h1>
+      <p class="welcome-subtitle">There is another question I have been meaning to ask you…</p>
+      <button id="btn-open" class="welcome-btn">Open</button>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 2: INVITATION ===================== -->
+  <section id="scene-invitation" class="scene">
+    <div class="invitation-card">
+
+      <!-- Colored corner ornaments (SVG) -->
+      <svg class="corner-ornament top-left" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 C2 48 2 2 2 2 C10 8 20 12 48 2" stroke="currentColor" stroke-width="1" fill="none" />
+        <path d="M2 48 C8 40 12 30 48 2" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
+        <circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.6" />
+        <path d="M8 2 C8 8 2 8 2 8" stroke="currentColor" stroke-width="0.8" fill="none" />
+        <path d="M14 2 C14 14 2 14 2 14" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4" />
+      </svg>
+      <svg class="corner-ornament top-right" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 C2 48 2 2 2 2 C10 8 20 12 48 2" stroke="currentColor" stroke-width="1" fill="none" />
+        <path d="M2 48 C8 40 12 30 48 2" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
+        <circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.6" />
+        <path d="M8 2 C8 8 2 8 2 8" stroke="currentColor" stroke-width="0.8" fill="none" />
+        <path d="M14 2 C14 14 2 14 2 14" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4" />
+      </svg>
+      <svg class="corner-ornament bottom-left" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 C2 48 2 2 2 2 C10 8 20 12 48 2" stroke="currentColor" stroke-width="1" fill="none" />
+        <path d="M2 48 C8 40 12 30 48 2" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
+        <circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.6" />
+        <path d="M8 2 C8 8 2 8 2 8" stroke="currentColor" stroke-width="0.8" fill="none" />
+        <path d="M14 2 C14 14 2 14 2 14" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4" />
+      </svg>
+      <svg class="corner-ornament bottom-right" viewBox="0 0 50 50" fill="none">
+        <path d="M2 48 C2 48 2 2 2 2 C10 8 20 12 48 2" stroke="currentColor" stroke-width="1" fill="none" />
+        <path d="M2 48 C8 40 12 30 48 2" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5" />
+        <circle cx="5" cy="5" r="2" fill="currentColor" opacity="0.6" />
+        <path d="M8 2 C8 8 2 8 2 8" stroke="currentColor" stroke-width="0.8" fill="none" />
+        <path d="M14 2 C14 14 2 14 2 14" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4" />
+      </svg>
+
+      <h2 class="invitation-heading">My Sweet Summerie,</h2>
+
+      <div class="invitation-divider"></div>
+
+      <p class="invitation-text">
+        Every moment with you feels precious, and I want to keep making more memories together. I have something special planned for us.
+      </p>
+
+      <p class="invitation-highlight">
+        Would you accompany me on a date this Sunday, March 15th, starting at 11 PM?
+      </p>
+
+      <p class="invitation-text" style="font-size: 1.15rem;">
+        We can start by going to a bakery to buy your favorite food and chocolate. 
+        Then we will go on a beautiful walk, maybe in the city streets... and if we have the chance, we might go to Alzawraa park, which was my intention from the start.
+      </p>
+
+      <p id="reconsider-message" class="reconsider-message"></p>
+
+      <div class="buttons-container">
+        <button id="btn-yes" class="btn btn-yes">
+          <span>Yes</span>
+          <span class="btn-heart">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align: middle;">
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </span>
+        </button>
+        <button id="btn-no" class="btn btn-no">No</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SCENE 3: CELEBRATION ===================== -->
+  <section id="scene-celebration" class="scene">
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Floating decorations for celebration -->
+    <div class="celebration-decorations"></div>
+
+    <div class="celebration-content">
+      <p class="celebration-pretext">She said yes again</p>
+
+      <h1 class="celebration-heading">Can't Wait</h1>
+
+      <div class="celebration-message">
+        <p>
+          I am so excited for this Sunday. 
+        </p>
+        <p>
+          Just the thought of walking with you, sharing chocolate, and exploring the city streets together makes my heart full. 
+          I promise it will be a beautiful night to remember.
+        </p>
+        <p>
+          Get ready—wear something you love, because you are about to feel so loved too.
+        </p>
+      </div>
+
+      <p class="celebration-signature">Forever yours, Mohammed</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

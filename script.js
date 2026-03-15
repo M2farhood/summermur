@@ -36,40 +36,46 @@
   }
 
   // --- Welcome → Invitation ---
-  btnOpen.addEventListener('click', function () {
-    switchScene(sceneWelcome, sceneInvitation);
-  });
+  if (btnOpen) {
+    btnOpen.addEventListener('click', function () {
+      switchScene(sceneWelcome, sceneInvitation);
+    });
+  }
 
   // --- No button logic ---
-  btnNo.addEventListener('click', function () {
-    if (noCount >= MAX_NO) return;
+  if (btnNo) {
+    btnNo.addEventListener('click', function () {
+      if (noCount >= MAX_NO) return;
 
-    noCount++;
-    const stage = 'stage-' + noCount;
+      noCount++;
+      const stage = 'stage-' + noCount;
 
-    // Remove previous stages
-    for (let i = 1; i <= MAX_NO; i++) {
-      btnYes.classList.remove('stage-' + i);
-      btnNo.classList.remove('stage-' + i);
-    }
+      // Remove previous stages
+      for (let i = 1; i <= MAX_NO; i++) {
+        btnYes.classList.remove('stage-' + i);
+        btnNo.classList.remove('stage-' + i);
+      }
 
-    // Add current stage
-    btnYes.classList.add(stage);
-    btnNo.classList.add(stage);
+      // Add current stage
+      btnYes.classList.add(stage);
+      btnNo.classList.add(stage);
 
-    // Show reconsider message
-    reconsiderMsg.textContent = reconsiderMessages[noCount - 1];
-    reconsiderMsg.classList.remove('visible');
-    // Force reflow for re-animation
-    void reconsiderMsg.offsetWidth;
-    reconsiderMsg.classList.add('visible');
-  });
+      // Show reconsider message
+      reconsiderMsg.textContent = reconsiderMessages[noCount - 1];
+      reconsiderMsg.classList.remove('visible');
+      // Force reflow for re-animation
+      void reconsiderMsg.offsetWidth;
+      reconsiderMsg.classList.add('visible');
+    });
+  }
 
   // --- Yes button → Celebration ---
-  btnYes.addEventListener('click', function () {
-    switchScene(sceneInvitation, sceneCelebration);
-    setTimeout(startConfetti, 600);
-  });
+  if (btnYes) {
+    btnYes.addEventListener('click', function () {
+      switchScene(sceneInvitation, sceneCelebration);
+      setTimeout(startConfetti, 600);
+    });
+  }
 
   // --- Confetti System ---
   function startConfetti() {
